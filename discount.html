@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+ <title>Discounts</title>
+<body>
+
+<h2>Dallas Williams computes discounts</h2>
+
+<form>
+    <label for="fBase">Enter Base Amount</label> 
+    <input type="number" id="fBase" name="fBase" value="20"> <br>
+    
+    <label for="fDisc">Enter the Discount Percentage</label>
+    <input type="number" id="fDisc" name="fDisc" value="10"> <br>
+
+    <input type="button" value="Apply Discount" onclick="discount()">
+
+
+</form>
+
+<p id="result"> </p>
+
+<form>
+    <input type="radio" id="ichi"  name="operand" value="times" onclick="chooseOP()">
+    <label for="ichi">*</label></br>
+
+    <input type="radio" id="ni" name="operand" value="divide" 
+        onclick="chooseOP()" >
+    <label for="ni">/</label></br>
+
+    <input type="radio" id="san" name="operand" value="exponent" 
+        onclick="chooseOP()" >
+    <label for="san">**</label></br>
+
+
+</form>
+
+<p id="mResult"> </p>
+
+
+<script> 
+result = document.getElementById("result")
+mResult = document.getElementById("mResult")
+
+function discount() {
+    
+    baseV = document.getElementById("fBase").value
+    discV = document.getElementById("fDisc").value
+    var vals = [0,0,0,0,0]
+    for(var i=1;i<6;i++){
+        
+        vals[i] = baseV*i - (((baseV*i) * discV)/100)
+        result.innerHTML = "Discounted amounts for base " + baseV + " are " + vals[1] + " " + vals[2] + " " + vals[3] + " " + vals[4]
+    }  
+}
+
+function chooseOP() {
+    val1 = document.getElementById("fBase").value
+    val2 = document.getElementById("fDisc").value
+
+    if(document.getElementById("ichi").checked == true){
+        val1 *= val2
+        mResult.innerHTML = "Result is " + val1
+    }
+    else if(document.getElementById("ni").checked == true){
+        val1 = val1 / val2
+        mResult.innerHTML = "Result is " + val1
+    }
+    else if(document.getElementById("san").checked == true){
+        val1 = val1 ** val2
+        mResult.innerHTML = "Result is " + val1
+    }
+    mResult.innerHTML = "Result is " + val1
+}
+
+</script>
+
+</body>
+</html> 
