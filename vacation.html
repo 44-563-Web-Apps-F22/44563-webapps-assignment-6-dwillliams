@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <title>Vacation Check Boxes</title>
+<body>
+
+<h2>Dallas Williams selects a vacation</h2>
+
+<form>
+    <input type="checkbox" id="air" name=vacation1   
+    value="True" checked>
+    <label for="spot1">Travel by Air</label></br>
+
+     <input type="checkbox" id="domestic" name="vacation2" 
+     value="True">
+    <label for="spot2">Domestic</label></br>
+
+    <input type="checkbox" id="resort" name="vacation3"   
+     value="False" checked>
+    <label for="spot3">Resort</label></br>
+
+    <input type="button" onclick="selectVacation()" value="Select a vacation">
+</form>
+
+
+<p id="result"> </p>
+
+<script> 
+my_vacation = {}
+
+out = document.getElementById("result")
+
+function selectVacation (){
+    my_vacation = {}
+    my_vacation['air'] = document.getElementById("air").value
+    my_vacation['domestic'] = domestic = document.getElementById("domestic").value
+    my_vacation['resort'] = document.getElementById("resort").value
+    $
+
+    out.innerHTML = my_vacation.air
+   
+}
+</script>
+
+</body>
+</html> 
